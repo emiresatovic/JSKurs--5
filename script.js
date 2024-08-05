@@ -60,4 +60,32 @@ window.onscroll = () => {
     
 
     this.oldScroll = this.scrollY;
+
+
+    
+imageAnimation();
+
 };
+
+
+const imageAnimation = () => {
+
+    let sectionForAnimation = document.querySelector('.section2 .images');
+    let sectionPosition = sectionForAnimation.getBoundingClientRect().top
+    let screenPosition = window.innerHeight / 1.3;
+
+    console.log('scr p: '+ screenPosition);
+
+    console.log('sec p: ' + sectionPosition);
+
+
+    let leftImage = document.querySelector('.slideFromLeft');
+    let RightImage = document.querySelector('.slideFromRight');
+
+    if(sectionPosition < screenPosition) {
+    leftImage.classList.add('animated');
+    RightImage.classList.add('animated');
+    }
+};
+
+
